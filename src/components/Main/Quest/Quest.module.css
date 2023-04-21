@@ -1,0 +1,7 @@
+.quest,
+.subquest {
+  max-width: 70vw;
+  margin: 0;
+  text-align: center;
+  font-size: 14px;
+}

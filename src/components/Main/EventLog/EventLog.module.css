@@ -1,0 +1,47 @@
+.eventLogContainer {
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  gap: 1vh;
+  width: 70vw;
+  max-height: 30vh;
+}
+.eventContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 90%;
+  color: #ffffff;
+  background-color: #000000;
+}
+.description,
+.outcomeContainer {
+  margin: 0;
+}
+.outcomeContainer {
+  display: flex;
+  align-self: flex-end;
+  gap: 1vw;
+}
+
+@media (orientation: landscape) {
+  .eventLogContainer {
+    max-height: 40vh;
+  }
+  .eventContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 95%;
+  }
+  .eventLogContainer::-webkit-scrollbar {
+    background-color: #fff;
+    border: 1px solid #000000;
+  }
+  .eventLogContainer::-webkit-scrollbar-thumb {
+    background-color: #000000;
+
+  }
+}

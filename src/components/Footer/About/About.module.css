@@ -1,0 +1,19 @@
+.container {
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+.button {
+  font-weight: bold;
+  border: none;
+  background-color: transparent;
+  color: #FFFFFF;
+  font-weight: bold;
+  font-family: "Open Sans", "Sans Serif";
+  font-size: auto;
+  cursor: pointer;
+  line-height: 5vh;
+  margin: 0 5vw 0 0;
+}

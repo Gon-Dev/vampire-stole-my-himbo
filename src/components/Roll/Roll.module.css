@@ -1,0 +1,21 @@
+.container {
+  position: fixed;
+  bottom: 10vh;
+  right: 5vw;
+  display: flex;
+  height: 10vh;
+  justify-content: center;
+  align-items: center;
+}
+.button {
+  padding: 5px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border: solid black 2px;
+  cursor: pointer;
+}
+.image {
+  width: 50px;
+}

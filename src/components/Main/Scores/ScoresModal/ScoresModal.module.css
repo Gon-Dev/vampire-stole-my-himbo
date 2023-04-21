@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1vh;
+  background-color: #000000;
+  color: #ffffff;
+  z-index: 10;
+  position: absolute;
+  top: -5vh;
+  left: -10px;
+  width: 100%;
+  padding: 10px;
+  border: #FFFFFF 2px solid;
+}
+.button {
+  border: none;
+  background-color: #ffffff;
+  width: 40%;
+  align-self: center;
+  cursor: pointer;
+  margin-top: 1vh;
+  font-weight: bold;
+}
+.title,
+.text {
+  margin: 0;
+}
+.title {
+  align-self: center;
+  line-height: 2vh;
+}
+.text {
+  color: #ffffff;
+}

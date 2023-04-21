@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3vw;
+}
+.title {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+
+}
+.tileContainer {
+  display: flex;
+  justify-content: center;
+  gap: 2vw;
+}
+.tile {
+  width: 15px;
+  height: 15px;
+  border: rgba(0, 0, 0, 0.3) 1px solid;
+  background-color: #FFFFFF;
+}
+.tileOn {
+  background-color: #000000;
+}
+
+@media (min-width: 1000px) {
+  .tile {
+    width: 20px;
+    height: 20px;
+  }
+  .title {
+    font-size: 14px;
+  }
+  .tileContainer {
+    gap: 1vw;
+  }
+}

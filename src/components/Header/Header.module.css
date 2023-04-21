@@ -1,0 +1,53 @@
+.container {
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  background-color: #000000;
+  color: #FFFFFF;
+  padding: 1rem;
+  box-sizing: border-box;
+  width: 100%;
+}
+.title,
+.subtitle {
+  font-family: 'Rye','Open Sans', sans-serif;
+}
+.subtitle {
+  padding: 0 0 0 3vw;
+}
+.title,
+.subtitle,
+.credit {
+  margin: 0;
+  font-weight: 400;
+}
+.title {
+  font-size: 2rem;
+}
+.title::first-letter {
+  font-size: 1.5rem;
+}
+.subtitle {
+  font-size: 1rem;
+}
+.title::after {
+  content: "";
+  display: flex;
+  width: 75%;
+  border-top: 1px solid #FFFFFF;
+  margin-top: 1vh;
+}
+.credit {
+  font-family: 'Open Sans', sans-serif;
+  align-self: flex-end;
+  margin-top: .5vh;
+}
+@media (min-width: 1000px) {
+  .container {
+    padding: 1rem 2rem;
+  }
+  .title::after {
+    width: 40%;
+  }
+}
