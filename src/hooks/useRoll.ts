@@ -4,7 +4,7 @@ function useRoll() {
     return Math.floor(Math.random() * sides);
   }
   const typeRoll = diceRoll(3);
-  const eventRoll = diceRoll(6);
+  const eventRoll = diceRoll(20);
 
   return [typeRoll,eventRoll];
 }
