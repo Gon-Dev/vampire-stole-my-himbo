@@ -22,8 +22,11 @@
 }
 .outcomeContainer {
   display: flex;
+  flex-direction: row-reverse;
   align-self: flex-end;
-  gap: 1vw;
+}
+.outcome {
+  font-weight: bold;
 }
 
 @media (orientation: landscape) {

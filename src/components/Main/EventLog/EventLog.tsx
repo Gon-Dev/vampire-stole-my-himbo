@@ -23,20 +23,14 @@ function EventLog( { events }: {events: Event[]} ) {
           <div className={styles.eventContainer} key={index}>
             <p className={styles.description}>{event.description}</p>
             <div className={styles.outcomeContainer}>
-              <p className={styles.outcome}>
-                <strong>
-                  {event.outcome.clue ? `+${event.outcome.clue} CLUE` : ""}
-                </strong>
+              <p className={styles.outcome} style={event.outcome.clue ? {margin: ".5vh .5vw"} : {margin: "0"}}>
+                  {event.outcome.clue ? `+${event.outcome.clue} CLUE` : null}
               </p>
-              <p className={styles.outcome}>
-                <strong>
-                  {event.outcome.injury ? `${event.outcome.injury === -1 ? "-1" : "+" + event.outcome.injury} INJURY` : ""}
-                </strong>
+              <p className={styles.outcome} style={event.outcome.injury ? {margin: ".5vh .5vw"} : {margin: "0"}}>
+                  {event.outcome.injury ? `${event.outcome.injury === -1 ? "-1" : "+" + event.outcome.injury} INJURY` : null}
               </p>
-              <p>
-                <strong>
-                  {event.outcome.daylight ? `${event.outcome.daylight} DAYLIGHT` : ""}
-                </strong>
+              <p className={styles.outcome} style={event.outcome.daylight ? {margin: ".5vh .5vw"} : {margin: "0"}}>
+                  {event.outcome.daylight ? `${event.outcome.daylight} DAYLIGHT` : null}
               </p>
             </div>
           </div>
