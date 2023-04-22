@@ -2,7 +2,7 @@ import styles from "./descriptionPanel.module.css";
 function DescriptionPanel( {isExpanded}: {isExpanded: boolean} ) {
   console.log();
   return (
-    <div className={styles.container} style={isExpanded ? {transform: "translateX(0px)"}:{transform: `translateX(-${window.innerWidth / 2}px)`}}>
+    <div className={`${styles.container} ${isExpanded ? styles.panelOn : styles.panelOff}`}>
       <p className={styles.description}>
         To start the game, you generate a new Event by rolling a die (button in
         the right-bottom side of the screen). Keep making rolls until one of

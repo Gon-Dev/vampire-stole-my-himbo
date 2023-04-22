@@ -10,6 +10,9 @@
   line-height: 3vh;
   letter-spacing: .5px;
   border: #FFFFFF 2px solid;
+  position: absolute;
+  bottom: 5vh;
+  left: 0vw;
 }
 .listText,
 .description {
@@ -18,6 +21,12 @@
 .unorderedList {
   list-style-type: circle;
   padding: 0 0 0 5vw;
+}
+.panelOn {
+  transform: translateX(0vw);
+}
+.panelOff {
+  transform: translateX(-60vw);
 }
 @media (min-width: 1000px) {
   .container {

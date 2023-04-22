@@ -10,6 +10,9 @@
   line-height: 3vh;
   letter-spacing: .5px;
   border: #FFFFFF 2px solid;
+  position: absolute;
+  bottom: 5vh;
+  right: 0vw;
 }
 .description {
   margin: 1vh 0;
@@ -17,6 +20,13 @@
 .link {
   color: yellow;
 }
+.panelOn {
+  transform: translateX(0vw);
+}
+.panelOff {
+  transform: translateX(60vw);
+}
+
 @media (min-width: 1000px) {
   .container {
     max-width: 40vw;
