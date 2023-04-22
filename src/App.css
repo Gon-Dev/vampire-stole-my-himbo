@@ -3,18 +3,21 @@ body,
 #root {
   margin: 0;
   padding: 0;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   color: #000000;
-  max-height: 100vh;
   overflow: hidden;
-  letter-spacing: .09vw;
+  letter-spacing: 0.09vw;
   font-size: 12px;
+}
+html,
+body,
+#root,
+.App {
+  height: 100%;
 }
 .App {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
-  height: 100vh;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
