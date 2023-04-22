@@ -312,9 +312,9 @@ const events = [
         description:
           "The hallway of infinite doors. They lead to the same closet. Not again.",
         outcome: {
-          clue: 1,
+          clue: 0,
           injury: 0,
-          daylight: 0,
+          daylight: -1,
         },
       },
       {
@@ -519,8 +519,8 @@ const events = [
         description:
           "You found an altar to the vampire. Better leave him a cigarette.",
         outcome: {
-          clue: 1,
-          injury: 0,
+          clue: 0,
+          injury: -1,
           daylight: 0,
         },
       },

@@ -1,4 +1,4 @@
-import events from "./events"
+import events from "../data/events"
 
 function useEvent(typeRoll: number, eventRoll: number) {
   const eventType = events[typeRoll];
