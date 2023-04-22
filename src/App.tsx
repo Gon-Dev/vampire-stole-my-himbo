@@ -1,5 +1,5 @@
 import "./App.css";
-import { MutableRefObject, useContext, useEffect, useState } from "react";
+import { useState } from "react";
 import Header from "./components/Header/Header";
 import Main from "./components/Main/Main";
 import Footer from "./components/Footer/Footer";
