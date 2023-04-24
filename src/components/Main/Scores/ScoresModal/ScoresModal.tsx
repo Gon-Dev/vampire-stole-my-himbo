@@ -1,23 +1,21 @@
 import styles from "./ScoresModal.module.css";
-import { MutableRefObject, useRef } from "react";
-import { setEventStateType } from "../../../Roll/Roll";
-import { resetScoresType } from "../Scores";
+import { MutableRefObject, useContext, useRef } from "react";
+import { EventsContext } from "../../../../App";
 
 function ScoresModal({
   injuries,
   clues,
   daylight,
-  setEvents,
   resetScores,
   rollRef,
 }: {
   injuries: number;
   clues: number;
   daylight: number;
-  setEvents: setEventStateType;
-  resetScores: resetScoresType;
+  resetScores: () => void;
   rollRef: MutableRefObject<HTMLDivElement | null>;
 }) {
+  const {setEvents} = useContext(EventsContext)
   const modalEl = useRef<HTMLDivElement>(null);
   const handleClick = () => {
     resetScores();

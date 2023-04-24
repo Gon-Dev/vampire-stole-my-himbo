@@ -1,30 +1,22 @@
-import styles from "./Roll.module.css"
-import dice from "./../../assets/dice.svg"
-import useRoll from "./../../hooks/useRoll"
+import styles from "./Roll.module.css";
+import dice from "./../../assets/dice.svg";
+import useRoll from "./../../hooks/useRoll";
 import useEvent from "../../hooks/useEvent";
-import event from "../../App"
-import { MutableRefObject } from "react";
+import { EventsContext } from "../../App";
+import { MutableRefObject, useContext } from "react";
+import { SetEventType, EventType } from "../../types/types";
 
-export type setEventStateType = React.Dispatch<React.SetStateAction<event[]>>;
-
-interface event {
-  description: string;
-  outcome: {
-    clue: number;
-    injury: number;
-    daylight: number;
-  };
-}
-
-function Roll({setEvents, forwardedRef}: {setEvents: setEventStateType, forwardedRef: MutableRefObject<HTMLDivElement | null>}) {
+function Roll({
+  forwardedRef,
+}: {
+  forwardedRef: MutableRefObject<HTMLDivElement | null>;
+}) {
+  const { setEvents }:{ setEvents: SetEventType  } = useContext(EventsContext);
 
   function handleButton() {
     const [newTypeRoll, newEventRoll] = useRoll();
-    const newEvent = useEvent(newTypeRoll,newEventRoll);
-    setEvents(prevEvents => [
-      ...prevEvents,
-      newEvent
-    ])
+    const newEvent: EventType = useEvent(newTypeRoll, newEventRoll);
+    setEvents((prevEvents) => [...prevEvents, newEvent]);
   }
 
   return (
@@ -33,7 +25,7 @@ function Roll({setEvents, forwardedRef}: {setEvents: setEventStateType, forwarde
         <img className={styles.image} src={dice} alt="" />
       </button>
     </div>
-  )
+  );
 }
 
 export default Roll;

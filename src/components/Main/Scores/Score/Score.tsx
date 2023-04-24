@@ -1,9 +1,6 @@
 import styles from "./Score.module.css";
 import { useRef, useEffect } from "react";
-interface ScoreProps {
-  title: string;
-  tilesOn: number;
-}
+import { ScoreProps } from "../../../../types/types";
 
 function Score(props: ScoreProps) {
   

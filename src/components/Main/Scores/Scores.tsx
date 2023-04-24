@@ -1,41 +1,27 @@
-import { MutableRefObject, useMemo, useState } from "react";
+import { MutableRefObject, useContext, useMemo, useState } from "react";
 import styles from "./Scores.module.css";
 import Score from "./Score/Score";
 import ScoresModal from "./ScoresModal/ScoresModal";
-import { setEventStateType } from "../../Roll/Roll";
-
-export interface event {
-  description: string;
-  outcome: {
-    clue: number;
-    injury: number;
-    daylight: number;
-  };
-}
-
-export type resetScoresType = () => void;
+import { EventsContext } from "../../../App";
+import { EventsContextType } from "../../../types/types";
 
 function Scores({
-  events,
-  setEvents,
-  rollRef
+  rollRef,
 }: {
-  events: event[];
-  setEvents: setEventStateType;
-  rollRef: MutableRefObject<HTMLDivElement | null>
+  rollRef: MutableRefObject<HTMLDivElement | null>;
 }) {
-
+  const { events, setEvents } = useContext<EventsContextType>(EventsContext);
   let lastEvent = events.length > 0 ? events[events.length - 1] : null;
   const [injuries, setInjuries] = useState(0);
   const [clues, setClues] = useState(0);
   const [daylight, setDaylight] = useState(9);
 
   const resetScores = () => {
-    setInjuries(0)
-    setClues(0)
-    setDaylight(9)
-  }
-  
+    setInjuries(0);
+    setClues(0);
+    setDaylight(9);
+  };
+
   useMemo(() => {
     if (lastEvent) {
       let eventInjuries = lastEvent?.outcome.injury;
@@ -53,11 +39,12 @@ function Scores({
         setDaylight((prevScore) =>
           prevScore + eventDaylight <= 10 ? prevScore + eventDaylight : 10
         );
-      
     }
   }, [lastEvent]);
-  if(rollRef.current) {
-    injuries >= 9 || clues >= 9 || daylight <= 0 ? rollRef.current.style.display = "none" : null
+  if (rollRef.current) {
+    injuries >= 9 || clues >= 9 || daylight <= 0
+      ? (rollRef.current.style.display = "none")
+      : null;
   }
   return (
     <div className={styles.container}>
@@ -66,9 +53,7 @@ function Scores({
         clues={clues}
         daylight={daylight}
         resetScores={resetScores}
-        setEvents={setEvents}
         rollRef={rollRef}
-        // PASAR setEvents y resetScores (funcion para agrupar los 3 setScore al valor incial)
       />
       <Score title={"INJURIES"} tilesOn={injuries} />
       <Score title={"CLUES"} tilesOn={clues} />

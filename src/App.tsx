@@ -1,31 +1,29 @@
 import "./App.css";
-import { useState } from "react";
+import { createContext, useState } from "react";
 import Header from "./components/Header/Header";
 import Main from "./components/Main/Main";
 import Footer from "./components/Footer/Footer";
 import Roll from "./components/Roll/Roll";
 import { useRef } from "react";
+import { EventType, EventsContextType } from "./types/types";
 
-export interface event {
-  description: string;
-  outcome: {
-    clue: number;
-    injury: number;
-    daylight: number;
-  };
-}
-
+export const EventsContext = createContext<EventsContextType>({
+  events: [],
+  setEvents: () => {},
+});
 
 function App() {
-  const [events, setEvents] = useState<event[]>([]);
+  const [events, setEvents] = useState<EventType[]>([]);
   const rollRef = useRef(null);
   return (
-  <div className="App">
-      <Header />
-      <Roll forwardedRef={rollRef} setEvents={setEvents}/>
-      <Main events={events} setEvents={setEvents} rollRef={rollRef}/>
-      <Footer />
-  </div>
+    <div className="App">
+      <EventsContext.Provider value={{ events, setEvents }}>
+        <Header />
+        <Roll forwardedRef={rollRef} />
+        <Main rollRef={rollRef} />
+        <Footer />
+      </EventsContext.Provider>
+    </div>
   );
 }
 
